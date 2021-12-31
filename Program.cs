@@ -23,6 +23,12 @@ namespace UserRegistrationRegex
             Console.WriteLine("Please Enter your email to check");
             var check3 = email.ValidateEMail(Console.ReadLine());
             Console.WriteLine(check3);
+
+            //UC4
+            UC4MobileFormate mobile = new UC4MobileFormate();
+            Console.WriteLine("Please Enter your mobile no with country code");
+            var check4 = mobile.ValidateMobileNo(Console.ReadLine());
+            Console.WriteLine(check4);
         }
     }
 }
