@@ -35,6 +35,12 @@ namespace UserRegistrationRegex
             Console.WriteLine("Please Enter your password to check");
             var check5 = password1.ValidatePassword1(Console.ReadLine());
             Console.WriteLine(check5);
+
+            //UC6
+            UC6Password2 password2 = new UC6Password2();
+            Console.WriteLine("Please Enter your password to check");
+            var check6 = password2.ValidatePassword2(Console.ReadLine());
+            Console.WriteLine(check6);
         }
     }
 }
