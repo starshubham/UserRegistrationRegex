@@ -29,6 +29,12 @@ namespace UserRegistrationRegex
             Console.WriteLine("Please Enter your mobile no with country code");
             var check4 = mobile.ValidateMobileNo(Console.ReadLine());
             Console.WriteLine(check4);
+
+            //UC5
+            UC5Password1 password1 = new UC5Password1();
+            Console.WriteLine("Please Enter your password to check");
+            var check5 = password1.ValidatePassword1(Console.ReadLine());
+            Console.WriteLine(check5);
         }
     }
 }
