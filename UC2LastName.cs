@@ -13,7 +13,7 @@ namespace UserRegistrationRegex
     {
         public static string LAST_NAME_REGEX = "^[A-Z]{1}[a-z]{2,}$";
 
-        public bool ValidateFirstName(string lName)
+        public bool ValidateLastName(string lName)
         {
             return Regex.IsMatch(lName, LAST_NAME_REGEX);
         }
