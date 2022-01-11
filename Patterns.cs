@@ -36,7 +36,7 @@ namespace UserRegistrationRegex
                     return "invalid";
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
@@ -65,7 +65,7 @@ namespace UserRegistrationRegex
                     return "invalid";
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
@@ -94,7 +94,7 @@ namespace UserRegistrationRegex
                     return "invalid";
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
@@ -123,7 +123,7 @@ namespace UserRegistrationRegex
                     return "invalid";
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
@@ -157,7 +157,7 @@ namespace UserRegistrationRegex
                     return "invalid";
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
