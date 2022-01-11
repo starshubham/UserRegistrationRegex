@@ -14,33 +14,49 @@ namespace UserRegistrationRegex
 
         public string FirstName(string name1)
         {
-            string FirstName = "^[A-Za-z]\\w{1,10}$$";
+            string FirstName = "^[A-Z]{1}[a-z]{2,}$";
             Regex regex = new Regex(FirstName);
-            if (regex.IsMatch(name1))
+            try
             {
-                Console.WriteLine(name1 + " is a valid first name");
-                return "Valid";
+                if (regex.IsMatch(name1))
+                {
+                    Console.WriteLine(name1 + " is a valid first name");
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine(name1 + " is invalid. Please Enter First name start with capital letter and maximum 10 charactors");
+                    return "Invalid";
+                }
             }
-            else
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(name1 + " is invalid. Please Enter First name start with capital letter and maximum 10 charactors");
-                return "Invalid";
+                throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
         }
 
         public string LastName(string name2)
         {
-            string LastName = "^[A-Za-z]\\w{1,10}$$";
-            Regex regex = new Regex(LastName);
-            if (regex.IsMatch(name2))
+            
+            try
             {
-                Console.WriteLine(name2 + " is a valid last name");
-                return "Valid";
+                string LastName = "^[A-Z]{1}[a-z]{2,}$";
+                Regex regex = new Regex(LastName);
+                if (regex.IsMatch(name2))
+                {
+                    Console.WriteLine(name2 + " is a valid last name");
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine(name2 + " is invalid. Please Enter Last name start with capital letter and maximum 10 charactors");
+                    return "Invalid";
+                }
             }
-            else
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(name2 + " is invalid. Please Enter Last name start with capital letter and maximum 10 charactors");
-                return "Invalid";
+
+                throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
         }
 
@@ -48,15 +64,22 @@ namespace UserRegistrationRegex
         {
             string Email = "^[A-Z0-9a-z]{1,}([.#$^][A-Za-z0-9]+)*[@][A-Za-z]{2,}[.][A-Za-z]{2,3}([.][a-zA-Z]{2})?$";
             Regex regex = new Regex(Email);
-            if (regex.IsMatch(name3))
+            try
             {
-                Console.WriteLine(name3 + " is a valid email");
-                return "Valid";
+                if (regex.IsMatch(name3))
+                {
+                    Console.WriteLine(name3 + " is a valid email");
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine(name3 + " is invalid.");
+                    return "Invalid";
+                }
             }
-            else
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(name3 + " is invalid.");
-                return "Invalid";
+                throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
         }
 
@@ -64,15 +87,22 @@ namespace UserRegistrationRegex
         {
             string MobileNumber = "(0|91)?[ ][6-9][0-9]{9}";
             Regex regex = new Regex(MobileNumber);
-            if (regex.IsMatch(name4))
+            try
             {
-                Console.WriteLine(name4 + " is a valid mobile number");
-                return "Valid";
+                if (regex.IsMatch(name4))
+                {
+                    Console.WriteLine(name4 + " is a valid mobile number");
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine(name4 + " is invalid.");
+                    return "Invalid";
+                }
             }
-            else
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(name4 + " is invalid.");
-                return "Invalid";
+                throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
         }
 
@@ -80,15 +110,22 @@ namespace UserRegistrationRegex
         {
             string Password = "^.*(?=.{8,})(?=.*)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$";
             Regex regex = new Regex(Password);
-            if (regex.IsMatch(name5))
+            try
             {
-                Console.WriteLine(name5 + " is a valid password.");
-                return "Valid";
-            }
-            else
+                if (regex.IsMatch(name5))
+                {
+                    Console.WriteLine(name5 + " is a valid password.");
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine(name5 + " is invalid.");
+                    return "Invalid";
+                }
+            }           
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(name5 + " is invalid.");
-                return "Invalid";
+                throw new CustomException(CustomException.ExceptionType.Argument_Null_Exception, "invalid");
             }
         }
     }
